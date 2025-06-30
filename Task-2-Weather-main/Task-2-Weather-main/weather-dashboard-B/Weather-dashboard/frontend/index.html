@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/weather-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="description" content="A modern, professional weather application providing real-time weather forecasts, hourly and weekly predictions, and detailed meteorological information." />
+    <meta name="theme-color" content="#1e40af" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://weather-dashboard.example.com/" />
+    <meta property="og:title" content="Weather Dashboard - Modern Weather Forecasts" />
+    <meta property="og:description" content="Get accurate weather forecasts, hourly predictions, and detailed meteorological data in a beautiful, easy-to-use interface." />
+    <meta property="og:image" content="/og-image.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://weather-dashboard.example.com/" />
+    <meta property="twitter:title" content="Weather Dashboard - Modern Weather Forecasts" />
+    <meta property="twitter:description" content="Get accurate weather forecasts, hourly predictions, and detailed meteorological data in a beautiful, easy-to-use interface." />
+    <meta property="twitter:image" content="/og-image.png" />
+    
+    <!-- Preconnect to API domain for performance -->
+    <link rel="preconnect" href="https://api.example.com">
+      <title>Weather Dashboard</title>
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    
+    <!-- Font display optimization -->
+    <style>
+      /* Font display strategy to minimize CLS */
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2) format('woff2');
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/index.jsx"></script>
+      <!-- Initialize theme -->
+    <script>
+      // Check for saved theme preference
+      const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const savedTheme = localStorage.getItem('weatherSettings') 
+        ? JSON.parse(localStorage.getItem('weatherSettings')).theme 
+        : null;
+      
+      // Apply theme attribute early to prevent flash of incorrect theme
+      document.documentElement.setAttribute('data-theme', 
+        (savedTheme === 'dark' || (savedTheme === 'auto' && userPrefersDark)) ? 'dark' : 'light'
+      );
+      document.documentElement.classList.add('theme-transition');
+    </script>
+  </body>
+</html> 

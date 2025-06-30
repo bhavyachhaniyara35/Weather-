@@ -1,0 +1,110 @@
+.parallax-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.parallax-element {
+  will-change: transform;
+}
+
+/* Cloud elements - Light Mode */
+[data-theme="light"] .cloud-large,
+[data-theme="light"] .cloud-medium,
+[data-theme="light"] .cloud-small {
+  color: rgba(203, 213, 225, 0.6);
+  opacity: 0.7;
+}
+
+/* Cloud elements - Dark Mode */
+[data-theme="dark"] .cloud-large,
+[data-theme="dark"] .cloud-medium,
+[data-theme="dark"] .cloud-small {
+  color: rgba(30, 41, 59, 0.5);
+  opacity: 0.15;
+}
+
+/* Sun elements - Light Mode */
+[data-theme="light"] .sun-large,
+[data-theme="light"] .sun-medium,
+[data-theme="light"] .sun-small {
+  color: #fbbf24;
+  opacity: 0.7;
+}
+
+[data-theme="light"] .sun-large svg,
+[data-theme="light"] .sun-medium svg,
+[data-theme="light"] .sun-small svg {
+  filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.3));
+}
+
+/* Sun elements - Dark Mode */
+[data-theme="dark"] .sun-large,
+[data-theme="dark"] .sun-medium,
+[data-theme="dark"] .sun-small {
+  color: #f59e0b;
+  opacity: 0.15;
+}
+
+[data-theme="dark"] .sun-large svg,
+[data-theme="dark"] .sun-medium svg,
+[data-theme="dark"] .sun-small svg {
+  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.2));
+}
+
+/* Raindrop elements - Light Mode */
+[data-theme="light"] .raindrop-large,
+[data-theme="light"] .raindrop-medium,
+[data-theme="light"] .raindrop-small {
+  color: #60a5fa;
+  opacity: 0.5;
+}
+
+/* Raindrop elements - Dark Mode */
+[data-theme="dark"] .raindrop-large,
+[data-theme="dark"] .raindrop-medium,
+[data-theme="dark"] .raindrop-small {
+  color: #3b82f6;
+  opacity: 0.2;
+}
+
+/* Element sizes */
+.cloud-large {
+  width: 180px;
+  height: 100px;
+}
+
+.cloud-medium {
+  width: 120px;
+  height: 70px;
+}
+
+.cloud-small {
+  width: 80px;
+  height: 50px;
+}
+
+/* Animation for subtle floating effect */
+@keyframes floating {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(3px, -3px); }
+  100% { transform: translate(0, 0); }
+}
+
+.cloud-small, .raindrop-small {
+  animation: floating 8s ease-in-out infinite;
+}
+
+.cloud-medium {
+  animation: floating 12s ease-in-out infinite;
+}
+
+.cloud-large {
+  animation: floating 16s ease-in-out infinite;
+}

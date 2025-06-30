@@ -1,0 +1,202 @@
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 24px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Skeleton Layout */
+.skeleton-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 24px;
+}
+
+.skeleton-section-top {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+.skeleton-current {
+  grid-column: span 6;
+  background-color: var(--card-background);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--card-shadow);
+  padding: 24px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skeleton-hourly {
+  grid-column: span 6;
+  background-color: var(--card-background);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--card-shadow);
+  padding: 24px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skeleton-weekly {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--card-shadow);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Skeleton Elements */
+.skeleton-header {
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.skeleton-temperature {
+  height: 60px;
+  width: 120px;
+  background: linear-gradient(90deg, var(--light-blue), #f0f9ff, var(--light-blue));
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+  margin: 24px 0;
+}
+
+.skeleton-line-short, 
+.skeleton-line-medium,
+.skeleton-line-xsmall {
+  background: linear-gradient(90deg, var(--light-blue), #f0f9ff, var(--light-blue));
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+  height: 16px;
+}
+
+.skeleton-line-short {
+  width: 30%;
+}
+
+.skeleton-line-medium {
+  width: 60%;
+}
+
+.skeleton-line-xsmall {
+  width: 40px;
+  height: 8px;
+}
+
+.skeleton-hours {
+  display: flex;
+  gap: 16px;
+  padding-top: 16px;
+  overflow-x: hidden;
+}
+
+.skeleton-hour-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.skeleton-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--light-blue), #f0f9ff, var(--light-blue));
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeleton-circle-sm {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--light-blue), #f0f9ff, var(--light-blue));
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeleton-days {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skeleton-day-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  gap: 16px;
+}
+
+.skeleton-bar {
+  height: 10px;
+  flex: 1;
+  border-radius: 5px;
+  background: linear-gradient(90deg, var(--light-blue), #f0f9ff, var(--light-blue));
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Loading Message */
+.loader-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 0;
+  gap: 16px;
+}
+
+.pulse-loader {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  opacity: 0.6;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.loader-text {
+  color: var(--text-secondary);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  50% { transform: scale(1); opacity: 0.3; }
+  100% { transform: scale(0.8); opacity: 0.6; }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .skeleton-section-top {
+    grid-template-columns: 1fr;
+  }
+  
+  .skeleton-current, 
+  .skeleton-hourly {
+    grid-column: span 12;
+    height: 250px;
+  }
+}

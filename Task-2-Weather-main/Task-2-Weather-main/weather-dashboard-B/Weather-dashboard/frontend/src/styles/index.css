@@ -1,0 +1,143 @@
+/* DEFAULT LIGHT MODE - No theme attribute needed */
+:root {
+  --primary: #ff6b35;        /* Coral orange */
+  --secondary: #f7931e;      /* Warm amber */
+  --accent: #c5282f;         /* Deep red */
+  --background: #fdf8f5;     /* Warm white */
+  --surface: #ffffff;        /* Pure white */
+  --surface-elevated: #f9fafb;
+  --surface-hover: #f3f4f6;
+  --text-primary: #2c1810;   /* Dark brown */
+  --text-secondary: #8b6f47; /* Medium brown */
+  --text-muted: #bfae9b;     /* Muted brown */
+  --border: #e8ddd4;         /* Light brown */
+  --border-light: #f3ede7;   /* Very light brown */
+
+  /* Translucent colors for charts */
+  --primary-translucent: rgba(255, 107, 53, 0.15);
+  --secondary-translucent: rgba(247, 147, 30, 0.15);
+  --accent-translucent: rgba(197, 40, 47, 0.15);
+  --text-secondary-translucent: rgba(139, 111, 71, 0.15);
+
+  /* Effects */
+  --shadow: rgba(44, 24, 16, 0.08);
+  --shadow-light: rgba(44, 24, 16, 0.04);
+  --glass-bg: rgba(255, 255, 255, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-shadow: 0 8px 32px rgba(44, 24, 16, 0.08);
+  
+  /* Border radius */
+  --border-radius-sm: 0.5rem;
+  --border-radius-md: 1rem;
+  --border-radius-lg: 1.5rem;
+  
+  /* Transitions */
+  --transition-speed: 0.3s;
+}
+
+[data-theme="light"] {
+  --primary: #ff6b35;
+  --secondary: #f7931e;
+  --accent: #c5282f;
+  --background: #fdf8f5;
+  --surface: #ffffff;
+  --surface-elevated: #f9fafb;
+  --surface-hover: #f3f4f6;
+  --text-primary: #2c1810;
+  --text-secondary: #8b6f47;
+  --text-muted: #bfae9b;
+  --border: #e8ddd4;
+  --border-light: #f3ede7;
+
+  /* Translucent colors for charts */
+  --primary-translucent: rgba(255, 107, 53, 0.15);
+  --secondary-translucent: rgba(247, 147, 30, 0.15);
+  --accent-translucent: rgba(197, 40, 47, 0.15);
+  --text-secondary-translucent: rgba(139, 111, 71, 0.15);
+
+  /* Effects */
+  --shadow: rgba(44, 24, 16, 0.08);
+  --shadow-light: rgba(44, 24, 16, 0.04);
+  --glass-bg: rgba(255, 255, 255, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-shadow: 0 8px 32px rgba(44, 24, 16, 0.08);
+}
+
+[data-theme="dark"] {
+  --primary: #34d399;
+  --secondary: #6ee7b7;
+  --accent: #10b981;
+  --background: #0c1f17;
+  --surface: #1a2e23;
+  --surface-elevated: #243832;
+  --surface-hover: #2d453a;
+  --text-primary: #f0fff4;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --border: #374151;
+  --border-light: #243832;
+
+  /* Translucent colors for dark theme */
+  --primary-translucent: rgba(34, 211, 168, 0.15);
+  --secondary-translucent: rgba(52, 211, 153, 0.15);
+  --accent-translucent: rgba(20, 184, 166, 0.15);
+  --text-secondary-translucent: rgba(163, 163, 179, 0.15);
+
+  /* Effects for dark theme */
+  --shadow: rgba(0, 0, 0, 0.4);
+  --shadow-light: rgba(0, 0, 0, 0.2);
+  --glass-bg: rgba(26, 46, 35, 0.85);
+  --glass-border: rgba(52, 211, 153, 0.3);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: 'Inter', 'Satoshi', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  background: var(--background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', 'Satoshi', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  color: var(--text-primary);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: inherit;
+}
+
+input, select {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.875rem;
+  outline: none;
+  background: var(--surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+input:focus, select:focus {
+  border-color: var(--primary);
+} 
